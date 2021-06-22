@@ -72,7 +72,7 @@ dependencies = [
     Dependency("Hwloc_jll"),
     Dependency("SQLite_jll"),
     Dependency("Lua_jll"; compat="5.3"),
-    HostBuildDependency("Lua_jll"; compat="5.3"),
+    HostBuildDependency("Lua_jll"),
 ]
 
 build_tarballs(ARGS, name, version, sources, script, platforms, products, dependencies)
