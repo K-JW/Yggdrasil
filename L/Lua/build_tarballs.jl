@@ -4,9 +4,9 @@ name = "Lua"
 version = v"5.4.3"
 
 sources = [
-    "https://www.lua.org/ftp/lua-$(version).tar.gz" =>
-        "f8612276169e3bfcbcfb8f226195bfc6e466fe13042f1076cbde92b7ec96bbfb",
-    "./bundled",
+    ArchiveSource("https://www.lua.org/ftp/lua-$(version).tar.gz",
+                  "f8612276169e3bfcbcfb8f226195bfc6e466fe13042f1076cbde92b7ec96bbfb"),
+    DirectorySource("./bundled"),
 ]
 
 script = raw"""
@@ -48,11 +48,11 @@ platforms = supported_platforms()
 products = [
     ExecutableProduct("lua", :lua),
     ExecutableProduct("luac", :luac),
-    LibraryProduct(["liblua", "lua53"], :liblua),
+    LibraryProduct(["liblua", "lua54"], :liblua),
 ]
 
 dependencies = [
-    "Readline_jll",
+    Dependency("Readline_jll"),
 ]
 
 build_tarballs(ARGS, name, version, sources, script, platforms, products, dependencies)
