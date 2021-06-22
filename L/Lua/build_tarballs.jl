@@ -31,7 +31,7 @@ fi
 # XXX: Work around Lua apparently not understanding its own Windows setup
 if [[ ${target} == *-mingw* ]]; then
     TO_BIN="lua.exe luac.exe"
-    TO_LIB="lua53.dll"
+    TO_LIB="lua54.dll"
 else
     TO_BIN="lua luac"
     TO_LIB="liblua.${dlext}"
